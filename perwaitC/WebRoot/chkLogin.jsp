@@ -34,7 +34,7 @@
 		if(iname>0){
 		//response.setHeader("refresh", "3;url=index.jsp");
 		
-			int ipw=dao.getUserInPw(upw, upw);
+			int ipw=dao.getUserInPw(uname, upw);
 			if(ipw>0){
 			//login验证通过
 			session.setAttribute("uname", uname);
