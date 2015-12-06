@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      div{
+         width: 200px;
+          height: 200px;
+        margin: 70px auto 30px;
+        border: 1px solid salmon;
+          position: relative;
+
+      }
+    div>span{
+        width: 200px;
+        height: 200px;
+        color: #fff;
+        text-shadow:
+        -10px -10px  0 rgba(255, 0, 0, 1),
+        10px 10px 0 rgba(235,222,0,0.7);
+        font-size: 70px;
+        line-height:200px;
+        z-index: 3;
+        background-color: rgba(127, 255, 212, 0.18);
+        display: block;
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+        -webkit-backface-visibility: hidden;
+
+    }
+
+      div>span:nth-child(odd){
+          transform: rotate(35deg) skewY(-10deg);
+      }
+      div>span:nth-child(even){
+          transform: rotate(-25deg) skewY(12deg);
+      }
+      div>span:nth-last-child(1){
+          transform: rotate(0deg);
+          box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+      }
+
+      div:hover span{
+          transform: rotate(0deg) skewY(0deg);
+          text-shadow:
+          1px 1px 0 rgba(216,65,40,0.1),
+          -1px -1px 0 rgba(37,166,164,0.1);
+      }
+    </style>
+</head>
+<body>
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span>trans</span>
+</div>
+</body>
+</html>
