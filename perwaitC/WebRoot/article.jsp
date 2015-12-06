@@ -6,35 +6,31 @@
 	tid = request.getParameter("tid");
 	String pid = "0";
 	pid = request.getParameter("pid");
+		String tname = null, pname = null, pclick = null, preplies = null, pdate = null, pauthor = null, particle = null, ulogo = null, article_uid = null;
+		tname = new Dao().getXXval("theme", "tid", tid, "tname");
+		pname = new Dao().getXXval("posts", "tid", tid, "pname", "pid", pid);
+		article_uid = new Dao().getXXval("usr", "uname", "admin", "uid");
+		pclick = new Dao().getXXval("posts", "tid", tid, "pclicks", "pid", pid);//获取点击量
+		preplies = new Dao().getXXval("posts", "tid", tid, "preplies", "pid", pid);//获取回复数
+		pdate = new Dao().getXXval("posts", "tid", tid, "pdate", "pid", pid);//获取date
+		pauthor = new Dao().getXXval("posts", "tid", tid, "pauthor", "pid", pid);//获取date
+		particle =new Dao().getXXval("posts", "tid", tid, "particle", "pid", pid);
+		ulogo =new Dao().getXXval("usr", "uname", pauthor, "uimg");
+		if (ulogo == null || ulogo == "" || ulogo.equals("")) {
+			ulogo = "image\\defaultlogo.jpg";
+		}
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index --test</title>
+<title><%=pname+ new Names().getIndexName()+new Names().getIndexNameLast() %></title>
 <%@ include file="head.jsp"%>
 </head>
 <!-- nav -->
 <body>
-	<%
-		Dao dao = new Dao();
-		String tname = null, pname = null, pclick = null, preplies = null, pdate = null, pauthor = null, particle = null, ulogo = null, article_uid = null;
-		tname = dao.getXXval("theme", "tid", tid, "tname");
-		pname = dao.getXXval("posts", "tid", tid, "pname", "pid", pid);
-		article_uid = dao.getXXval("usr", "uname", "admin", "uid");
-		pclick = dao.getXXval("posts", "tid", tid, "pclicks", "pid", pid);//获取点击量
-		preplies = dao
-				.getXXval("posts", "tid", tid, "preplies", "pid", pid);//获取回复数
-		pdate = dao.getXXval("posts", "tid", tid, "pdate", "pid", pid);//获取date
-		pauthor = dao.getXXval("posts", "tid", tid, "pauthor", "pid", pid);//获取date
-		particle = dao
-				.getXXval("posts", "tid", tid, "particle", "pid", pid);
-		ulogo = dao.getXXval("usr", "uname", pauthor, "uimg");
-		if (ulogo == null || ulogo == "" || ulogo.equals("")) {
-			ulogo = "image\\defaultlogo.jpg";
-		}
-	%>
+	
 	<div id="myBody">
 		<div class="container ">
 			<div class="row bg_and_border">
@@ -47,13 +43,13 @@
 						<div class="modal-body body-list ">
 							<!-- 内容-->
 							<div class="col-sm-12 col-xs-12 ">
-								<a href="MyIndex.jsp?uid=<%=article_uid%>"> <img
+								<a href="MyIndex.jsp?uid=<%=article_uid%>" class="hidden-xs"> <img
 									src="<%=ulogo%>" width="40px" height="40px" alt="img 40px ">
 								</a>
 								<div>
 									<p>
 										<label><a href=""><%=tname%></a></label>发布人：<%=pauthor%></p>
-									<p><%=pclick%>次浏览
+									<p>
 										<%=new Dao().getReplyNum(tname, pid)%>个回复&#12288; 时间：<%=pdate%></p>
 								</div>
 							</div>
@@ -79,7 +75,7 @@
 								String r_ulogo = null;
 								String r_uid = null;
 
-								List<Reply> rp = dao.getReplyList(tname, pid);
+								List<Reply> rp = new Dao().getReplyList(tname, pid);
 								for (Reply k : rp) {
 									if (k.getRshow() == "0" || (k.getRshow() + "").equals("0")
 											|| k.getRshow() == null) {
@@ -88,10 +84,10 @@
 										if (r_ulogo == null || r_ulogo == "" || r_ulogo.equals("")) {
 											r_ulogo = "image\\defaultlogo.jpg";
 										}
-										r_uid = dao.getXXval("usr", "uname", k.getRauthor(), "uid");
+										r_uid = new Dao().getXXval("usr", "uname", k.getRauthor(), "uid");
 							%>
 							<div class="col-sm-12 col-xs-12 ">
-								<a href="MyIndex.jsp?uid=<%=r_uid%>"> <img
+								<a class="hidden-xs" href="MyIndex.jsp?uid=<%=r_uid%>"> <img
 									src="<%=r_ulogo%>" width="40px" height="40px" alt="img 40px ">
 								</a>
 								<div>

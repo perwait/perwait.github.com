@@ -1,13 +1,12 @@
 * {padding: 0;margin: 0;border: 0}
-body{font-family: "Microsoft YaHei";background-color: #f7f7f7;min-width: 350px;text-decoration: none;min-width: 400px;
+body{font-family: "Microsoft YaHei";background-color: #f7f7f7;text-decoration: none;min-width: 290px;
 }
+textarea{ resize: none}
 a:focus,a:hover {
     text-decoration: none;
 }
-.modal-content {margin-top:50%}
-textarea{
-	resize:none;
-}
+
+
 .bg-499ef3{
     background-color: #499ef3;
 }
@@ -20,11 +19,15 @@ nav a{
 
 nav a:hover{
     color: #ffffff;
+
 }
 nav img{width: 45px; height: 45px; }
 nav  a:hover{
     background-color: #4dabff!important;
     color: #ffffff!important;
+}
+nav .dropdown-menu a:hover{
+    color: #333 !important;
 }
 nav img{
     margin-top: 2px;
@@ -57,7 +60,7 @@ nav img{
 
 }
 
-/* 更改bootstrap部分*/
+/* 鏇存敼bootstrap閮ㄥ垎*/
 .col-sm-12{
     padding: 0;
 }

@@ -23,7 +23,7 @@ public class Dao {
 			stmt.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.println("¡¾dao¡¿insert  use error");
+			System.out.println("ï¿½ï¿½daoï¿½ï¿½insert  use error");
 			e.printStackTrace();
 		}finally
 		{
@@ -45,7 +45,7 @@ public class Dao {
 			stmt.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.println("¡¾dao¡¿insert  theme error");
+			System.out.println("ï¿½ï¿½daoï¿½ï¿½insert  theme error");
 			e.printStackTrace();
 		}finally
 		{
@@ -69,10 +69,10 @@ public class Dao {
 			stmt.setString(6, reply.getRdate());
 			
 			stmt.executeUpdate();
-			System.out.println(sql);
+			
 
 		} catch (Exception e) {
-			System.out.println("¡¾dao¡¿insert  reply error");
+			System.out.println("ï¿½ï¿½daoï¿½ï¿½insert  reply error");
 			e.printStackTrace();
 		}finally
 		{
@@ -96,10 +96,10 @@ public class Dao {
 			stmt.setString(5, posts.getPauthor());
 			stmt.setString(6, posts.getPdate());
 			stmt.executeUpdate();
-			System.out.println(sql);
+			
 
 		} catch (Exception e) {
-			System.out.println("¡¾dao¡¿insert  posts error");
+			System.out.println("ï¿½ï¿½daoï¿½ï¿½insert  posts error");
 			e.printStackTrace();
 		}finally
 		{
@@ -232,7 +232,7 @@ public class Dao {
 		List<Posts> posts=new ArrayList<Posts>();
 		try {
 			conn = myUtils.getConnection();
-			String sql="select * from "+table+" where "+SQLname+"="+"\""+name+"\"";
+			String sql="select * from "+table+" where "+SQLname+"="+"\""+name+"\" order by pdate desc";
 			stmt=conn.prepareStatement(sql);
 			//stmt.setString(1,SQLname);
 			//stmt.setString(1,name+"");
@@ -269,7 +269,7 @@ public class Dao {
 		List<Posts> posts=new ArrayList<Posts>();
 		try {
 			conn = myUtils.getConnection();
-			String sql="select * from "+table;
+			String sql="select * from "+table+" order by pdate desc";
 			stmt=conn.prepareStatement(sql);
 			
 			rs=	stmt.executeQuery();
@@ -297,6 +297,7 @@ public class Dao {
 		}
 		return posts;
 	}
+	
 	
 	public List<Theme> getThemeList(String table){
 		Connection conn = null;
@@ -341,7 +342,6 @@ public class Dao {
 			conn = myUtils.getConnection();
 			String sql="select * from "+table+" where "+SQLA+"=\""+a+"\"";
 			stmt=conn.prepareStatement(sql);
-			System.out.println(sql);
 			rs=	stmt.executeQuery();
 			while(rs.next())
 			{	
@@ -459,7 +459,7 @@ public class Dao {
 		
 	}
 	
-	//Í¨¹ýa²éÑ¯bµÄÊýÁ¿
+	//Í¨ï¿½ï¿½aï¿½ï¿½Ñ¯bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getSqlAForB(String table,String SQLa,Object a){
 		int iex=0;
 		Connection conn = null;
@@ -468,6 +468,36 @@ public class Dao {
 		try {
 			conn = myUtils.getConnection();
 			String sql="select * from "+table+" where "+SQLa+"=\""+a+"\"";
+			stmt=conn.prepareStatement(sql);
+			
+			
+			rs=	stmt.executeQuery();
+			while(rs.next())
+			{	
+				iex++;
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally
+		{
+			myUtils.closeConnection();
+			myUtils.closeResultSet(rs);
+			myUtils.closePreparedStatement(stmt);
+		}
+		return iex;
+		
+		
+	}
+	public int getSqlAForBandDay(String table,String SQLa,Object a){
+		int iex=0;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs =null;
+		try {
+			conn = myUtils.getConnection();
+			String sql="select * from "+table+" where "+SQLa+"=\""+a+"\" and DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date(pdate)";
 			stmt=conn.prepareStatement(sql);
 			
 			
@@ -586,8 +616,8 @@ public class Dao {
 		
 	}
 	
-	//²éÑ¯x µÃµ½y 
-	//²éÑ¯  Ä³±íÖÐ   ×Ö¶Î£¨val1£©=Öµ£¨val2£©µÄÁÐ £¬²éÑ¯ ½á¹ûÖÐ val3ÁÐ¶ÎµÄÖµ
+	//ï¿½ï¿½Ñ¯x ï¿½Ãµï¿½y 
+	//ï¿½ï¿½Ñ¯  Ä³ï¿½ï¿½ï¿½ï¿½   ï¿½Ö¶Î£ï¿½val1ï¿½ï¿½=Öµï¿½ï¿½val2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¯ ï¿½ï¿½ï¿½ï¿½ï¿½ val3ï¿½Ð¶Îµï¿½Öµ
 	public String getXXval(String table,Object val1,Object val2,Object val3){
 		String val=null;
 		PreparedStatement stmt=null;
@@ -624,8 +654,8 @@ public class Dao {
 	}
 	
 	
-	//²éÑ¯x µÃµ½y 
-	//²éÑ¯  Ä³±íÖÐ   ×Ö¶Î£¨val1£©=Öµ£¨val2£©µÄÁÐ £¬²éÑ¯ ½á¹ûÖÐ val3ÁÐ¶ÎµÄÖµ
+	//ï¿½ï¿½Ñ¯x ï¿½Ãµï¿½y 
+	//ï¿½ï¿½Ñ¯  Ä³ï¿½ï¿½ï¿½ï¿½   ï¿½Ö¶Î£ï¿½val1ï¿½ï¿½=Öµï¿½ï¿½val2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¯ ï¿½ï¿½ï¿½ï¿½ï¿½ val3ï¿½Ð¶Îµï¿½Öµ
 	public String getXXval(String table,Object val1,Object val2,Object val3,Object val4,Object val5){
 		String val=null;
 		PreparedStatement stmt=null;

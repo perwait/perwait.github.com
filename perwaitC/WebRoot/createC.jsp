@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index --test</title>
+<title>创建话题   - 蒲苇网</title>
 <%@ include file="head.jsp"%>
 </head>
 <!-- nav -->

@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html" language="java"
-	import="java.sql.*,com.zsz.jdbc.*" pageEncoding="UTF-8"%>
+	import="java.sql.*,com.zsz.jdbc.*,com.zsz.test.Names" pageEncoding="UTF-8"%>
 <%
 	String create_author=(String)session.getAttribute("uname");
 %>
@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index --test</title>
+<title><%=new Names().getTopName()+new Names().getIndexName()+new Names().getIndexNameLast() %></title>
 <%@ include file="link.jsp"%>
 </head>
 <body>
@@ -90,8 +90,7 @@
 								<label><a href="list.jsp?tid=<%=k.getTid()%>"><%=k.getTname()%></a></label>
 								<p>
 									共计
-									<%=new Dao().getSqlAForB("posts", "tid", k.getTid())%>篇文章
-									7天内新增 x篇
+									<%=new Dao().getSqlAForB("posts", "tid", k.getTid())%>篇文章  7天内新增 <%=new Dao().getSqlAForBandDay("posts", "tid", k.getTid())%>篇
 								</p>
 							</div>
 						</div>

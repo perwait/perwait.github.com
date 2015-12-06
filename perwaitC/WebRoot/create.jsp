@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index --test</title>
+<title>创建文章  - 蒲苇网</title>
 <%@ include file="head.jsp"%>
 <%@ include file="js.jsp"%>
 </head>

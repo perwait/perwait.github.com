@@ -1,11 +1,21 @@
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/ajax.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>	
+<script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='js/jquery-1.11.3.min.js' %3E%3C/script%3E"));
+    }
+</script>
+
+
+</script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script> 
+<script type="text/javascript" src="js/reg.js"></script>
 <script>
 	$(document).ready(function() {
 		a = window.location.href;
 		if (window.location.href.indexOf("topic") > 0) {
 			$("a[title='topic']").remove();
+		d
 		}
 	})
 

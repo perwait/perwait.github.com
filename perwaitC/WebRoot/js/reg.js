@@ -3,7 +3,7 @@
  */
 
     /*  通用函数--获取指定id的object*/
-function $(id){
+function by(id){
     obj=document.getElementById(id);
     return obj;
 }
@@ -113,23 +113,23 @@ function Logincheck()
 
     console.info("zhixing");
     //获取账号的数据
-    var name=$('uname').value;
-    var password=$('upw').value;
+    var name=by('login_uname').value;
+    var password=by('login_upw').value;
 
-    if(VlaueNullTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断是否为空*/
-    if(SpaceTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断是否有空格*/
-    if(LengthtTest(name,"UnameWarming",2,16)){return false}else{setNullinnerHTML("UnameWarming")};/*判断长度 */
-    if(SignTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断符号 */
-    if(ChineseTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断汉子 */
+    if(VlaueNullTest(name,"login_UnameWarming")){return false}else{setNullinnerHTML("login_UnameWarming")};/*判断是否为空*/
+    if(SpaceTest(name,"login_UnameWarming")){return false}else{setNullinnerHTML("login_UnameWarming")};/*判断是否有空格*/
+    if(LengthtTest(name,"login_UnameWarming",2,16)){return false}else{setNullinnerHTML("login_UnameWarming")};/*判断长度 */
+    if(SignTest(name,"login_UnameWarming")){return false}else{setNullinnerHTML("login_UnameWarming")};/*判断符号 */
+    if(ChineseTest(name,"login_UnameWarming")){return false}else{setNullinnerHTML("login_UnameWarming")};/*判断汉子 */
 
-    if(VlaueNullTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断是否为空*/
-    if(SpaceTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断是否有空格*/
-    if(SpecialCharTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断双字节符号 */
-    if(LengthtTest(password,"PasswordWarming",6,16)){return false}else{setNullinnerHTML("PasswordWarming")};/*判断长度 */
-    if(SignTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断符号 */
-    if(EnglishNumberTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断a-z A-Z 0-9 */
+    if(VlaueNullTest(password,"login_PasswordWarming")){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断是否为空*/
+    if(SpaceTest(password,"login_PasswordWarming")){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断是否有空格*/
+    if(SpecialCharTest(password,"login_PasswordWarming")){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断双字节符号 */
+    if(LengthtTest(password,"login_PasswordWarming",6,16)){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断长度 */
+    if(SignTest(password,"login_PasswordWarming")){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断符号 */
+    if(EnglishNumberTest(password,"login_PasswordWarming")){return false}else{setNullinnerHTML("login_PasswordWarming")};/*判断a-z A-Z 0-9 */
 
-
+    zsz_Login_ajax('login_UnameWarming','checkLogin','uname','upw');
 
     // if(name==""){document.getElementById("a3").innerHTML="请输入账号1"; return false;}
 
@@ -168,7 +168,7 @@ function Logincheck()
         return false; }
 */
 
-   /* var name1=$('upw').value;
+   /* var name1=by('upw').value;
 
     //检测空格
     var reg=new RegExp(/\s+/g);
@@ -192,7 +192,7 @@ function Logincheck()
     }
     // else {
     //密码框的代码如下
-    var pass=$('upw').value;
+    var pass=by('upw').value;
     if (pass.chLength()>16 || pass.chLength()<8)
     {
         alert('密码长度应在8-16之间');
@@ -202,7 +202,7 @@ function Logincheck()
     }
     else
         var pattern =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    var email = $('uemail').value;
+    var email = by('uemail').value;
     if (email=="" ||pattern.test(email))   //email输入为空或符合格式要求
     {
         return true
@@ -216,44 +216,45 @@ function Logincheck()
 
 }
 function Rregistration(){
-    var name=$('uname').value;
-    var password=$('upw').value;
-    var email=$('uemail').value;
-    var password2=$('upw2').value;
+    var name=by('reg_uname').value;
+    var password=by('reg_upw').value;
+    var email=by('reg_uemail').value;
+    var password2=by('reg_upw2').value;
     //开始判断name
-    if(VlaueNullTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断是否为空*/
-    if(SpaceTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断是否有空格*/
-    if(LengthtTest(name,"UnameWarming",2,16)){return false}else{setNullinnerHTML("UnameWarming")};/*判断长度 */
-    if(SignTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断符号 */
-    if(ChineseTest(name,"UnameWarming")){return false}else{setNullinnerHTML("UnameWarming")};/*判断汉字 */
+    if(VlaueNullTest(name,"reg_UnameWarming")){return false}else{setNullinnerHTML("reg_UnameWarming")};/*判断是否为空*/
+    if(SpaceTest(name,"reg_UnameWarming")){return false}else{setNullinnerHTML("reg_UnameWarming")};/*判断是否有空格*/
+    if(LengthtTest(name,"reg_UnameWarming",2,16)){return false}else{setNullinnerHTML("reg_UnameWarming")};/*判断长度 */
+    if(SignTest(name,"reg_UnameWarming")){return false}else{setNullinnerHTML("reg_UnameWarming")};/*判断符号 */
+    if(ChineseTest(name,"reg_UnameWarming")){return false}else{setNullinnerHTML("reg_UnameWarming")};/*判断汉字 */
 
 
     //开始判断password
-    if(VlaueNullTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断是否为空*/
-    if(SpaceTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断是否有空格*/
-    if(SpecialCharTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断双字节符号 */
-    if(LengthtTest(password,"PasswordWarming",6,16)){return false}else{setNullinnerHTML("PasswordWarming")};/*判断长度 */
-    if(SignTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断符号 */
-    if(EnglishNumberTest(password,"PasswordWarming")){return false}else{setNullinnerHTML("PasswordWarming")};/*判断a-z A-Z 0-9 */
-    if(VlaueNullTest(password2,"Password2")){return false}else{setNullinnerHTML("Password2")};/*判断是否为空*/
-    if(equalsTest(password,password2,"Password2")){return false}else{setNullinnerHTML("Password2")};
+    if(VlaueNullTest(password,"reg_PasswordWarming")){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断是否为空*/
+    if(SpaceTest(password,"reg_PasswordWarming")){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断是否有空格*/
+    if(SpecialCharTest(password,"reg_PasswordWarming")){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断双字节符号 */
+    if(LengthtTest(password,"reg_PasswordWarming",6,16)){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断长度 */
+    if(SignTest(password,"reg_PasswordWarming")){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断符号 */
+    if(EnglishNumberTest(password,"reg_PasswordWarming")){return false}else{setNullinnerHTML("reg_PasswordWarming")};/*判断a-z A-Z 0-9 */
+    if(VlaueNullTest(password2,"reg_Password2")){return false}else{setNullinnerHTML("reg_Password2")};/*判断是否为空*/
+    if(equalsTest(password,password2,"reg_Password2")){return false}else{setNullinnerHTML("reg_Password2")};
+    
     //开始判断email
     //if(VlaueNullTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断是否为空*/
     if(email!=""){
     	
-    	if(SpaceTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断是否有空格*/
-        if(LengthtTest(email,"EmailWarming",5,70)){return false}else{setNullinnerHTML("EmailWarming")};/*判断长度 */
+    	if(SpaceTest(email,"reg_EmailWarming")){return false}else{setNullinnerHTML("reg_EmailWarming")};/*判断是否有空格*/
+        if(LengthtTest(email,"reg_EmailWarming",5,70)){return false}else{setNullinnerHTML("reg_EmailWarming")};/*判断长度 */
         // if(SignTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断符号 */
         //if(ChineseTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断汉字 */
-        if(SpecialCharTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断双字节符号 */
-        if(EmailTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*验证邮箱*/
+        if(SpecialCharTest(email,"reg_EmailWarming")){return false}else{setNullinnerHTML("reg_EmailWarming")};/*判断双字节符号 */
+        if(EmailTest(email,"reg_EmailWarming")){return false}else{setNullinnerHTML("reg_EmailWarming")};/*验证邮箱*/
     }
 
 }
 
 function VEmail(){
 
-    var email=$('uemail').value;
+    var email=by('uemail').value;
 
     //开始判断email
     if(VlaueNullTest(email,"EmailWarming")){return false}else{setNullinnerHTML("EmailWarming")};/*判断是否为空*/
@@ -270,8 +271,8 @@ function VEmail(){
 }
 
 function getPasswd(){
-    var password=$('upw').value;
-    var password2=$('upw2').value;
+    var password=by('upw').value;
+    var password2=by('upw2').value;
 
     var pwd1=document.getElementById("upw").value;
     var pwd2=document.getElementById("upw2").value;
@@ -291,13 +292,15 @@ function getPasswd(){
 }
 
 function CreateGroup(){
-    var Gname=$('Gname').value;
+    var Gname=by('Gname').value;
     if(VlaueNullTest(Gname,"GnameWarming")){return false}else{setNullinnerHTML("GnameWarming")};/*判断是否为空*/
     if(SpaceTest(Gname,"GnameWarming")){return false}else{setNullinnerHTML("GnameWarming")};/*判断是否有空格*/
     if(LengthtTest(Gname,"GnameWarming",2,16)){return false}else{setNullinnerHTML("GnameWarming")};/*判断长度 */
     if(SignTest(Gname,"GnameWarming")){return false}else{setNullinnerHTML("GnameWarming")};/*判断符号 */
 }
 
+
+	
 
 
 

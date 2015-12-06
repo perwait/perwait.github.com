@@ -17,9 +17,9 @@ public class DaoTest {
 //queryName();
 // queryUpw();		
 	//querySQL();	
-		//queryaforb();
+		queryaforb();
 		//getxy();
-		getlist();
+		//getlist();
 		//gettable();
 		//inposts();
 	//getDate();
@@ -94,7 +94,8 @@ public class DaoTest {
 			Dao dao=new Dao();
 		//	int iex=dao.getSqlAForB("uname", "admin", "ulv", "a");
 			//int iex=dao.getSqlAForB("posts", "tid","1", "pid","2");
-			int iex=dao.getSqlAForB("reply", "tname","one test", "pid","1","rid","21");
+			int iex=dao.getSqlAForBandDay("posts", "tid", 13);
+			//int iex=dao.getSqlAForB("reply", "tname","one test", "pid","1","rid","21");
 			System.out.println(iex);
 		}
 			

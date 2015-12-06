@@ -34,16 +34,16 @@
 								<h3 class="h3">登陆</h3>
 							</div>
 							<div class="form-group">
-								<label class="sr-only">账号</label> <input id="uname" name="uname"
+								<label class="sr-only">账号</label> <input id="login_uname" name="uname"
 									type="text" class="form-control"
 									placeholder="请输入账号 长度为2-16字符 不能有空格 特殊字符">
-								<p id="UnameWarming">&#12288;</p>
+								<p id="login_UnameWarming">&#12288;</p>
 							</div>
 							<div class="form-group">
-								<label class="sr-only">密码</label> <input id="upw" name="upw"
+								<label class="sr-only">密码</label> <input id="login_upw" name="upw"
 									type="password" class="form-control"
 									placeholder="请输入密码 长度为2-16字符 不能有空格 特殊字符 汉字">
-								<p id="PasswordWarming">&#12288;</p>
+								<p id="login_PasswordWarming">&#12288;</p>
 							</div>
 							<div class="form-group">
 								<label class="sr-only">other</label> <a class="btn btn-default">找回密码</a>

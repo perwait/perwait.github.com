@@ -17,10 +17,22 @@
 			<nav>
 				<div class="row  ">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="col-md-1  pull-left">
+						<div class="col-md-1  pull-left hidden-xs">
 							<a href="index.jsp"><img class="img-circle"
 								src="image/ico1.png"></a>
 						</div>
+						  <div class="col-md-6  pull-left hidden-sm hidden-md hidden-lg">
+                        <ul class="nav navbar-nav list-inline nav-head">
+                            <li class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="glyphicon glyphicon-menu-hamburger btn-lg" aria-hidden="true"></a></li>
+                            <ul class="dropdown-menu dropdown-menu-left" id="ss">
+                                <li ><a  href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页动态</a></li>
+                                <li><a href="topic.jsp"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 全部分类</a></li>
+
+                            </ul>
+
+                        </ul>
+                    </div>
 						<div class="col-md-6  pull-left hidden-xs">
 							<ul id="nav_ul" class="nav navbar-nav list-inline nav-head">
 
@@ -68,19 +80,21 @@
 										Dropdown</span>
 								</button>
 								<ul class="dropdown-menu dropdown-menu-right">
-									<li><a href="MyIndex.jsp?uid=<%=uid%>">我的主页</a></li>
-									<li><a href="#">编辑资料</a></li>
+									<li><a href="MyIndex.jsp?uid=<%=uid%>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 我的主页</a></li>
+									<li><a href="javascript:;" data-toggle="modal"
+							data-target="#undefined" data-whatever="@getbootstrap"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 编辑资料</a></li>
 									<%
 										Dao dao = new Dao();
 											int iex = dao.getSqlAForB("uname", uname, "ulv", "root");
 											if (iex > 0) {
 									%>
-									<li><a href="#">进入后台</a></li>
+									<li><a href="javascript:;" data-toggle="modal"
+							data-target="#undefined" data-whatever="@getbootstrap"><span class="glyphicon glyphicon-tasks" aria-hidden="true" ></span> 进入后台</a></li>
 									<%
 										}
 									%>
 									<li role="separator" class="divider"></li>
-									<li><a href="exit.jsp">退出</a></li>
+									<li><a href="exit.jsp" ><span class="glyphicon glyphicon-off" aria-hidden="true"></span> 退出</a></li>
 								</ul>
 							</div>
 						</div>
@@ -107,14 +121,14 @@
 					</div>
 					<div class="modal-body">
 						<div>
-							<label class="sr-only">账号</label> <input id="uname" name="uname"
+							<label class="sr-only">账号</label> <input id="login_uname" name="uname"
 								type="text" class="form-control" id="Uname"
 								placeholder="UserName">
-							<p id="UnameWarming"></p>
-							<br> <label class="sr-only">密码</label> <input id="upw"
+							<p id="login_UnameWarming"></p>
+							<br> <label class="sr-only">密码</label> <input id="login_upw"
 								name="upw" type="password" class="form-control" id="Upassword"
 								placeholder="Password">
-							<p id="PasswordWarming"></p>
+							<p id="login_PasswordWarming"></p>
 						</div>
 					</div>
 					<div class="modal-footer form-group">
@@ -172,27 +186,27 @@
 							<h3 class="h3">登记</h3>
 						</div>
 						<div class="form-group">
-							<label class="sr-only">账号</label> <input id="uname" type="text"
-								name="uname" class="form-control"
+							<label class="sr-only">账号</label> <input id="reg_uname"  type="text"
+								name="uname" class="form-control" onblur="zsz_ajax('reg_UnameWarming','checkName?uname=','reg_uname')"
 								placeholder="必填-请输入账号 长度为2-16字符 不能有空格 特殊字符">
-							<p id="UnameWarming">&#12288;</p>
+							<p id="reg_UnameWarming">&#12288;</p>
 						</div>
 						<div class="form-group">
-							<label class="sr-only">密码</label> <input id="upw" type="password"
+							<label class="sr-only">密码</label> <input id="reg_upw" type="password"
 								name="upw" class="form-control"
 								placeholder="必填-请输入密码 长度为2-16字符 不能有空格 特殊字符 汉字">
-							<p id="PasswordWarming">&#12288;</p>
+							<p id="reg_PasswordWarming">&#12288;</p>
 						</div>
 						<div class="form-group">
-							<label class="sr-only">密码确认</label> <input id="upw2"
+							<label class="sr-only">密码确认</label> <input id="reg_upw2"
 								type="password" name="upw2" class="form-control"
 								placeholder="必填-请再次输入密码">
-							<p id="Password2">&#12288;</p>
+							<p id="reg_Password2">&#12288;</p>
 						</div>
 						<div class="form-group">
-							<label class="sr-only"></label> <input id="uemail" type="text"
+							<label class="sr-only"></label> <input id="reg_uemail" type="text"
 								name="uemail" class="form-control" placeholder="选填-请输入邮箱 ">
-							<p id="EmailWarming">&#12288;</p>
+							<p id="reg_EmailWarming">&#12288;</p>
 						</div>
 						<div class="form-group">
 							<input type="submit" class="btn btn-info form-control"
