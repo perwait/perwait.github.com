@@ -1,0 +1,145 @@
+/* public*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+}
+ul{
+    margin: 0!important;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family:  "Microsoft YaHei";
+    font-size: 1.4rem;
+    color: #000;
+    background-color: #fafafa;
+}
+a:hover,a:active,a:focus{
+    text-decoration: none;
+}
+/* head*/
+.navbar-head {
+    line-height: 50px;
+}
+.navbar-head-color {
+    background-color: #299ecf;
+}
+.navbar-head-color a{
+    color: #fff!important;
+    transition: .3s;
+}
+.navbar-head a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.navbar-head li a:hover,
+.navbar-head li a:active,
+.navbar-head li a:focus{
+    background-color: rgba(222, 217, 230, 0.26);
+}
+.navbar-head li{
+    padding: 0!important;
+}
+.navbar-head li>a{
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+}
+
+/* mobile nav*/
+.mobile-nav{
+    margin-top: 50px;
+    background-color: #fff;
+}
+.mobile-nav .container{
+    padding: 0!important;
+}
+.mobile-nav ul{
+    width: 100%;
+    text-align: center;
+}
+.mobile-nav li{
+    width: 32%;
+    padding: 0.5rem 0!important;
+    text-align: center;
+    border-bottom:3px solid #ffffff;
+
+}
+.mobile-nav li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.mobile-nav li.active{
+    border-bottom:3px solid #ff0000;
+}
+
+/* framework */
+.framework-content{
+   margin-top: 100px;
+}
+article {
+    padding: 0 1rem;
+    background-color: #fff;
+    border: 2px solid #e7e6e6;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+article h3{
+    color: #449acb;
+}
+
+/*  aside*/
+.top-ic li {
+    zoom: 1;
+    margin: 2rem 1rem;
+    position: relative;
+}
+.top-ic li>*:nth-child(1){
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.top-ic li>*:nth-last-child(1){
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+
+ }
+.top-ic li>img{
+    width: 8rem;
+    height: 8rem;
+    background-color: rgba(255, 236, 122, 0.43);
+}
+.top-ic li>div{
+    padding-top: 2rem;
+    text-align: center;
+    padding-left: 1rem;
+}
+.top-ic li>button{
+    background-color: #e6e6e6;
+    width: 5rem;
+    height: 3rem;
+}
+
+
+/* foot*/
+.footer {
+    margin: 2rem auto;
+    color: #6a6a6a;
+    zoom: 1;
+}
+.footer a{
+    color: inherit;
+}
+.footer:after {
+    clear:both;
+    content:'.';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}
