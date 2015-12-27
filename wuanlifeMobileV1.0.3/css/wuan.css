@@ -37,6 +37,32 @@ form:after{
     clear: both;
     overflow: hidden;
 }
+form h3{
+    color: #299ecf;
+}
+/* Login Reg getPassword... */
+.form-logo{
+    border-image: none;
+    border: 0!important;
+    width: 100%;
+    height: 80px;
+    background: url("../image/logo-1x.png")  no-repeat center center;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .form-logo{
+        width: 100%;
+        height: 160px;
+        background: url("../image/logo-2x.png")   no-repeat center center;
+    }
+}
+@media (min-width: 992px) {
+    .form-logo{
+        width: 100%;
+        height: 240px;
+        background: url("../image/logo-3x.png")   no-repeat center center;
+    }
+}
 
 /* head*/
 .navbar-head {
@@ -126,9 +152,94 @@ article h3{
     color: #449acb;
 }
 
+/* container*/
+.container-img {
+    width: 30%;
+}
+.container-img img{
+    width: 100%;
+    height: auto;
+    margin: 0.5rem;
+}
+.container-content{
+    width: 70%!important;
+}
+@media (min-width: 500px) and (max-width: 991px){
+    .container-content{
+        width: 80%!important;
+    }
+    .container-img{
+        width: 20%;
+    }
+}
+@media (min-width: 1000px) {
+    .container-content{
+        width: 90%!important;
+    }
+    .container-img{
+        width: 10%;
+    }
+}
 
 
 /*  aside*/
+.top-ic>li {
+    width: 100%;
+    zoom: 1;
+    margin: 10px;
+}
+.top-ic>li:after{
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    clear: both;
+    content: ".";
+}
+.top-ic>li>*{
+    float: left;
+}
+.top-ic>li>*:nth-child(1){
+    width: 6rem;
+    margin-right: 10px;
+}
+.top-ic>li>*:nth-child(1)>img{
+   width: 6rem;
+   height: 6rem;
+}
+@media (max-width: 370px) {
+    .top-ic>li>*:nth-child(1){
+        width: 4rem;
+        margin-right: 10px;
+    }
+    .top-ic>li>*:nth-child(1)>img{
+        width: 4rem;
+        height: 4rem;
+    }
+    .top-ic>li>*:nth-child(2){
+        width: 50%;
+        margin-left: 5px;
+        margin-top: 0;
+    }
+
+}
+@media (min-width: 370px) {
+    .top-ic>li>*:nth-last-child(2){
+        margin-top: 1rem;
+    }
+}
+.top-ic>li>*:nth-last-child(1){
+    margin-top: 1rem;
+}
+.top-ic>li>*:nth-child(2)>* {
+    text-align: center;
+}
+.top-ic>li>*:nth-last-child(1) {
+    width: 20%;
+    float: right;
+}
+
+/*
 aside .top-ic>li{
     width: 100%;
 }
@@ -139,11 +250,7 @@ aside .top-ic>li{
 .top-ic>li>*{
     float: left;
 }
-@media (max-width: 330px) {
-    .top-ic>li>button{
-        display: none !important;
-    }
-}
+
 .top-ic>li>button{
     float: right;
     color: #fff;
@@ -185,6 +292,7 @@ aside .top-ic>li{
     padding: 2px;
     border: 2px solid #e8e8e8;
 }
+*/
 
 /* reply-list*/
 .reply-list>div{
