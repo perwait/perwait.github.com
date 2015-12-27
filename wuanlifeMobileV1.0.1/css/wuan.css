@@ -16,6 +16,7 @@ body{
     font-size: 1.4rem;
     color: #000;
     background-color: #fafafa;
+    min-width: 320px;
 }
 a:hover,a:active,a:focus{
     text-decoration: none;
