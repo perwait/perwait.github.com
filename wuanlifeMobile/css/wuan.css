@@ -49,6 +49,9 @@ form{
     max-width: 33rem;
     margin: 0 auto;
 }
+.form-max-none{
+    max-width: none;
+}
 form:after{
     display: block;
     width: 0;
