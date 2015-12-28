@@ -36,12 +36,21 @@ a:hover,a:active,a:focus{
 form>*{
     resize: none;
     margin: 1.5rem 0;
-
 }
 .form-signin£¬{
     max-width: 500px;
     padding: 15px;
     margin: 0 auto;
+}
+.btn{
+    padding: 0.5rem 1rem;
+}
+input,.btn{
+   max-height: 3rem;
+
+}
+input,textarea{
+    border-radius:0!important; ;
 }
 
 form{
@@ -104,7 +113,7 @@ form h3{
 }
 .navbar-head {
     line-height: 5rem;
-    font-size: 1.9rem;
+    font-size: 1.6rem;
 }
 .navbar-head-color {
     background-color: #299ecf;
@@ -145,13 +154,19 @@ form h3{
 .mobile-nav ul{
     width: 100%;
     text-align: center;
-    margin-bottom: 0!important;
+    margin: 0!important;
 }
 .mobile-nav li{
     width: 32%;
     padding: .5rem 0!important;
     text-align: center;
     border-bottom:.3rem solid #ffffff;
+}
+.mobile-nav li:nth-last-child(1){
+     float: right;
+ }
+.mobile-nav li:nth-child(1){
+    float: left;
 }
 .mobile-nav li>a{
     display: block;
@@ -166,7 +181,7 @@ form h3{
 
 /* framework */
 .framework-content{
-    margin-top: 7rem;
+    margin-top: 8rem;
 }
 .delete-float{
     zoom: 1;
@@ -180,29 +195,33 @@ form h3{
     visibility:hidden;
 }
 section>.delete-float>*{
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0.8rem;
 }
 section>.delete-float h2{
-    margin-left: 3rem;
-    font-size: 2.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.4rem;
+    font-size: 2rem;
 }
 section>.delete-float>*:nth-last-child(1){
     margin-right: 1.5rem;
 }
 article {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 0rem 1.2rem;
+    padding: 1rem 1.2rem;
     background-color: #fff;
     border: .2rem solid #e7e6e6;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin: 1rem;
 
+}
+article:nth-child(2){
+    margin-top:0;
 }
 article h3,article h3>*{
     color: #32393d;
     font-size: 1.6rem;
+}
+article h3{
+    margin-top: 0!important;
 }
 article>div{
     margin: 1rem 0;
@@ -247,12 +266,16 @@ article>div{
     margin: .5rem;
     padding: .5rem 1rem;
     background-color: #fff;
-    border: 1px solid #e6e6e6;
+    border: .2rem solid #e7e6e6;
 }
 .top-ic li>*{
     float: left;
 }
+.top-ic li>*:nth-last-child(1){
+    margin-top: 1rem;
+}
 .top-ic li img{
+    margin-left: 1rem;
     width: 6rem;
     height: 6rem;
 }
@@ -303,7 +326,7 @@ article>div{
 
 /* foot*/
 .footer {
-    margin: 1rem auto;
+    margin-top: 1rem;
     color: #7b7b7b;zoom:1;
 }
 .footer *{
@@ -322,4 +345,11 @@ article>div{
     width: 0;
     height: 0;
     visibility:hidden;
+}
+/* text */
+.text-15{
+    font-size: 1.5rem;
+}
+.text-20{
+    font-size: 2rem;
 }
