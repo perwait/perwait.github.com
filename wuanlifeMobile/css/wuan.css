@@ -46,6 +46,8 @@ form>*{
 
 form{
     zoom: 1;
+    max-width: 33rem;
+    margin: 0 auto;
 }
 form:after{
     display: block;
@@ -66,7 +68,9 @@ form h3{
     height: 8rem;
     background: url("../image/logo-1x.png")  no-repeat center center;
 }
-
+.text-center>h3{
+    font-size: 1.6rem;
+}
 @media (min-width: 768px) and (max-width: 991px){
     .form-logo{
         width: 100%;
@@ -190,6 +194,8 @@ article {
     background-color: #fff;
     border: .2rem solid #e7e6e6;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+
 }
 article h3,article h3>*{
     color: #32393d;
@@ -213,7 +219,7 @@ article>div{
     width: 87%!important;
     height: 4.4rem;
     overflow: hidden;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 
