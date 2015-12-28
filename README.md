@@ -1,7 +1,7 @@
 #午安网 http://www.wuanlife.com
 --点击访问：[午安网](http://wuanlife.com/)<br>
 
-- [午安网移动版 页面预览](http://perwait.github.io/wuanlifeMobile/show.html) <span class="std-rec">[1.3]</span>
+- [午安网移动版 页面预览](http://wuanlife.com/) <span class="std-rec">[1.3]</span>
 
 # perwait.github.com
 #蒲苇网 （ perwait ）
