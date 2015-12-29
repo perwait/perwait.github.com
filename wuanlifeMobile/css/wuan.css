@@ -180,13 +180,13 @@ form h3{
     font-size: 1.6rem;
     color: black;
 }
-.mobile-nav li.active{
+.mobile-nav .active{
     border-bottom:.3rem solid #ff0000;
 }
 
 /* framework */
 .framework-content{
-    margin-top: 8.4rem;
+    margin-top: 8.55rem;
 }
 .delete-float{
     zoom: 1;
