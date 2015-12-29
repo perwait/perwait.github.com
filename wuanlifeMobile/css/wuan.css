@@ -14,7 +14,7 @@ html{
 h2{
     margin-top: 2rem;
     margin-left: 1rem;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
 }
 .col-md-12{
     padding: 0!important;
@@ -43,7 +43,11 @@ form>*{
     margin: 0 auto;
 }
 .btn{
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
+    margin-top: 0;
+}
+input{
+    border: .2rem solid #e7e6e6
 }
 input,.btn{
    max-height: 3rem;
@@ -99,14 +103,15 @@ form h3{
 }
 
 /* head*/
-.navbar-header{
-
+.navbar-brand{
+    padding: 0 1.5rem;
 }
+
 .navbar-header a{
     font-size: 2.4rem;
     display: block;
-    height: 100%;
-    line-height: 100%;
+    height:6rem;
+    line-height: 5rem;
 }
 .navbar-head ul{
     margin: 0!important;
@@ -195,13 +200,13 @@ form h3{
     visibility:hidden;
 }
 section>.delete-float>*{
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
 }
 section>.delete-float h2{
-    margin-top: 1rem;
+    margin-top: 1.1rem;
     margin-bottom: 1rem;
     margin-left: 1.4rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 section>.delete-float>*:nth-last-child(1){
     margin-right: 1.5rem;
@@ -216,6 +221,7 @@ article {
 article:nth-child(2){
     margin-top:0;
 }
+
 article h3,article h3>*{
     color: #32393d;
     font-size: 1.6rem;
@@ -267,6 +273,9 @@ article>div{
     padding: .5rem 1rem;
     background-color: #fff;
     border: .2rem solid #e7e6e6;
+}
+.top-ic li:nth-child(1){
+    margin-top: 0;
 }
 .top-ic li>*{
     float: left;
